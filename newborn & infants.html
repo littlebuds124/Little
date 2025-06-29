@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Newborn & Infant Toys | Little Buds Japan Imports</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7cce2;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f7cce2;
+      padding: 10px 20px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .cart-icon {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 1000;
+    }
+
+    .cart-icon img {
+      width: 40px;
+      height: 40px;
+    }
+
+    #cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: red;
+      color: white;
+      font-size: 12px;
+      border-radius: 50%;
+      padding: 2px 6px;
+    }
+
+    .search-bar {
+      padding: 15px;
+      text-align: center;
+      background-color: #f9f9f9;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .search-bar input {
+      padding: 8px;
+      width: 60%;
+      max-width: 400px;
+    }
+
+    .search-bar button {
+      padding: 8px 12px;
+      margin-left: 8px;
+    }
+
+   .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      border: 1px solid #ddd;
+      padding: 15px;
+      max-width: 250px;
+      text-align: center;
+      background:  #f4f4f4;
+      border-radius: 8px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    .thumbs {
+      margin-top: 10px;
+    }
+
+    .thumbs img {
+      width: 70px;
+      margin: 5px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 4px;
+    }
+
+    .thumbs img:hover {
+      border-color: #999;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #c2185b;
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #ff4081;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .whatsapp-button {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f3f3f3;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cart Icon -->
+  <a href="cart.html" class="cart-icon">
+    <img src="images/cart-icon.png" alt="Cart" />
+    <span id="cart-count">0</span>
+  </a>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Little Buds Logo" /></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="delivery.html">Delivery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search toys..." onkeyup="filterProducts()" />
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <h2 style="text-align:center; margin-top:20px;">Newborn & Infant Toys</h2>
+    <div class="product-grid" id="productGrid">
+
+      <!-- Toy 1 -->
+      <div class="product" data-name="tummy time mat">
+        <div class="gallery">
+          <img class="main-img" src="images/watermat.jpg" id="watermatMain" alt="Tummy time mat" />
+          <div class="thumbs">
+            <img onclick="document.getElementById('watermatMain').src='images/watermat.jpg'" src="images/watermat.jpg" />
+            <img onclick="document.getElementById('watermatMain').src='images/watermat3.jpg'" src="images/watermat3.jpg" />
+            <img onclick="document.getElementById('watermatMain').src='images/watermat1.jpg'" src="images/watermat1.jpg" />
+          </div>
+        </div>
+        <h3>Tummy Time Mat</h3>
+        <ul>
+          <li>Safe & soft for newborns</li>
+          <li>Stimulates sensory development</li>
+          <li>Washable and baby-friendly</li>
+        </ul>
+        <p class="price">Rs. 1,250</p>
+        <button onclick="addToCart('Tummy Time Mat', 1250)">Add to Cart</button>
+        <a class="whatsapp-button" href="https://wa.me/94779552234?text=Hi! I'm interested in the Tummy Time Mat.">Order via WhatsApp</a>
+      </div>
+
+      <!-- Toy 2 -->
+      <div class="product" data-name="caterpillar puzzle tou">
+        <div class="gallery">
+          <img class="main-img" src="images/caterpillar1.jpg" id="caterpillar" alt="caterpillar puzzle" />
+          <div class="thumbs">
+            <img onclick="document.getElementById('caterpillar').src='images/caterpillar2.jpg'" src="images/caterpillar2.jpg" />
+            <img onclick="document.getElementById('caterpillar').src='images/caterpillar.jpg'" src="images/caterpillar.jpg" />
+          </div>
+        </div>
+        <h3>mini fidget caterpillar toy</h3>
+        h3>
+  <ul>
+    <li>🐾 Fun Crawling Sensory Toy – Engages babies and young kids with lifelike movement</li>
+    <li>🧠 Promotes Sensory Development – Encourages touch, movement, and listening</li>
+    <li>😌 Stress Relief for All Ages – Calming and fun even for older children and adults</li>
+    <li>🎵 Satisfying Clicking Sound – Makes a soft, pleasing noise during play</li>
+    <li>✨ Soft & Flexible Build – Feels great to touch, and wiggles smoothly when shaken</li>
+  </ul>
+        <p class="price">Rs. 540</p>
+        <button onclick="addToCart('Colorful Rattle Set', 980)">Add to Cart</button>
+        <a class="whatsapp-button" href="https://wa.me/94779552234?text=Hi! I'm interested in the Colorful Rattle Set.">Order via WhatsApp</a>
+      </div>
+ <div class="product" data-name="cloth book">
+        <div class="gallery">
+          <img class="main-img" src="images/bug.jpg" id="ladybug" alt="ladybug cloth book" />
+          <div class="thumbs">
+            <img onclick="document.getElementById('ladybug').src='images/bug2.jpg'" src="images/bug2.jpg" />
+            <img onclick="document.getElementById('ladybug').src='images/bug.jpg'" src="images/bug.jpg" />
+ <h3>soft cloth book</h3>
+  <p class="price">Rs. 1620</p>
+        <button onclick="addToCart('Colorful Rattle Set', 980)">Add to Cart</button>
+        <a class="whatsapp-button" href="https://wa.me/94779552234?text=Hi! I'm interested in the Colorful Rattle Set.">Order via WhatsApp</a>
+            
+        </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Little Buds japan Imports | Akurana, Kandy, Sri Lanka</p>
+  </footer>
+
+  <script>
+    function addToCart(name, price) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name: name, price: price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+      alert(name + " has been added to your cart.");
+    }
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      document.getElementById('cart-count').textContent = cart.length;
+    }
+
+    function filterProducts() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const products = document.querySelectorAll(".product");
+
+      products.forEach(product => {
+        const name = product.getAttribute("data-name");
+        if (name.includes(input)) {
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      });
+    }
+
+    updateCartCount(); // On load
+// When "Add to Cart" button is clicked:
+addToCart('Product Name', productPrice);
+updateCartCount('cart-count');  // Update header count
+  </script>
+
+</body>
+</html>
